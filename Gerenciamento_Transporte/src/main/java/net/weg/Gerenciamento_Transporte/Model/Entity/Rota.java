@@ -29,7 +29,6 @@ public class Rota {
     @OneToOne
     private Endereco destino;
 
-    @NonNull
     @Column(nullable = false)
     private Double distancia;
 

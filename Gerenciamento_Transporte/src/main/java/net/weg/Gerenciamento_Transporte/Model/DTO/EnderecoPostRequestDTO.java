@@ -1,12 +1,15 @@
 package net.weg.Gerenciamento_Transporte.Model.DTO;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import lombok.NonNull;
 import net.weg.Gerenciamento_Transporte.Model.Entity.Endereco;
 
 public record EnderecoPostRequestDTO(@NotBlank String rua,
-                                     @NotBlank @Positive String numero,
+                                     @NotNull @Positive Integer numero,
                                      @NotBlank String cidade,
+                                     @NotBlank String estado,
                                      @NotBlank String bairro,
                                      @NotBlank String cep) {
 
@@ -15,9 +18,10 @@ public record EnderecoPostRequestDTO(@NotBlank String rua,
         return Endereco.builder()
                 .rua(this.rua)
                 .cidade(this.cidade)
-                .numero(Integer.valueOf(numero))
+                .numero(this.numero)
                 .bairro(this.bairro)
                 .cep(this.cep)
+                .estado(this.estado)
                 .build();
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/veiculo")
+@RequestMapping("/api/veiculo")
 @AllArgsConstructor
 public class VeiculoController {
 
@@ -20,9 +20,9 @@ public class VeiculoController {
     public ResponseEntity<Veiculo> addVeiculo(@RequestBody @Valid VeiculoPostRequestDTO veiculoPostRequestDTO){
         try{
             Veiculo veiculo = veiculoService.addVeiculo(veiculoPostRequestDTO);
-            return new ResponseEntity<>(veiculo, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(veiculo, HttpStatus.OK);
         }catch ( Exception e){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 

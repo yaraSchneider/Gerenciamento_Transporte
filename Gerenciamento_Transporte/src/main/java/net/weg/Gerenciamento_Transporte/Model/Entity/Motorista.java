@@ -17,13 +17,10 @@ public class Motorista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Integer id;
-    @NonNull
     @Column (nullable = false)
    private String nome;
-    @NonNull
     @Column(nullable = false)
    private String email;
-    @NonNull
     @Column(nullable = false)
    private String telefone;
 

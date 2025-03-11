@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/rota")
+@RequestMapping("/api/rota")
 @AllArgsConstructor
 public class RotaController {
 
@@ -18,9 +18,9 @@ public class RotaController {
     public ResponseEntity<Rota> addRota(@RequestBody Rota rota){
         try{
             rota = rotaService.addRota(rota);
-            return new ResponseEntity<>(rota, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(rota, HttpStatus.OK);
         }catch ( Exception e){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 

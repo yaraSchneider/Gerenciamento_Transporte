@@ -15,13 +15,10 @@ public class Veiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @NonNull
     @Column(nullable = false)
     private String marca;
-    @NonNull
     @Column(nullable = false)
     private String modelo;
-    @NonNull
     @Column(nullable = false)
     private String placa;
 

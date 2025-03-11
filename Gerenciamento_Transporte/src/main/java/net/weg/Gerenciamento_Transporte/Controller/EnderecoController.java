@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/endereco")
+@RequestMapping("/api/endereco")
 @AllArgsConstructor
 public class EnderecoController {
 
@@ -20,9 +20,9 @@ public class EnderecoController {
     public ResponseEntity<Endereco> addEndereco(@RequestBody @Valid EnderecoPostRequestDTO enderecoPostRequestDTO){
         try{
             Endereco endereco = enderecoService.addEndereco(enderecoPostRequestDTO);
-            return new ResponseEntity<>(endereco, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(endereco, HttpStatus.OK);
         }catch ( Exception e){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
