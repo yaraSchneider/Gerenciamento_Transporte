@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MotoristaRepository extends JpaRepository<Motorista, Integer> {
 
-    boolean existisByName(String nome);
+    boolean existsByNome(String nome);
 }

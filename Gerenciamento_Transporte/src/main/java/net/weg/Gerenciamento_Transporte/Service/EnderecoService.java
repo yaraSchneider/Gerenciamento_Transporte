@@ -15,7 +15,7 @@ public class EnderecoService {
     private EnderecoRepository enderecoRepository;
 
     public Endereco addEndereco(EnderecoPostRequestDTO enderecoPostRequestDTO){
-        if (enderecoRepository.existsbyNumero(Integer.valueOf(enderecoPostRequestDTO.numero()))){
+        if (enderecoRepository.existsByNumero(Integer.valueOf(enderecoPostRequestDTO.numero()))){
             throw new RuntimeException();
         }
         return enderecoRepository.save(enderecoPostRequestDTO.convertEndereco());

@@ -1,6 +1,7 @@
 package net.weg.Gerenciamento_Transporte.Model.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import net.weg.Gerenciamento_Transporte.Model.Entity.Endereco;
@@ -18,8 +19,14 @@ public class Rota {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @JsonIgnore
+    @ToString.Exclude
+    @OneToOne
     private Endereco origem;
 
+    @JsonIgnore
+    @ToString.Exclude
+    @OneToOne
     private Endereco destino;
 
     @NonNull

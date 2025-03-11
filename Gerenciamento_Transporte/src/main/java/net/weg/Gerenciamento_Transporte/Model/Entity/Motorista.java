@@ -27,6 +27,9 @@ public class Motorista {
     @Column(nullable = false)
    private String telefone;
 
+    @JsonIgnore
+    @ToString.Exclude
+    @OneToOne
    private Endereco endereco;
 
     @JsonIgnore

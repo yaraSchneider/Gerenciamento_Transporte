@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EnderecoRepository extends JpaRepository<Endereco, Integer> {
 
-    boolean existsbyNumero(Integer numero);
+    boolean existsByNumero(Integer numero);
 }

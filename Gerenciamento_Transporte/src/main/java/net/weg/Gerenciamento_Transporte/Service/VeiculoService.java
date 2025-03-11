@@ -16,7 +16,7 @@ public class VeiculoService {
     private VeiculoRepository veiculoRepository;
 
     public Veiculo addVeiculo(VeiculoPostRequestDTO veiculoPostRequestDTO){
-        if (veiculoRepository.existsByVeiculoPlaca(veiculoPostRequestDTO.placa())){
+        if (veiculoRepository.existsByPlaca(veiculoPostRequestDTO.placa())){
            throw new RuntimeException();
         }
         return veiculoRepository.save(veiculoPostRequestDTO.converVeiculo());

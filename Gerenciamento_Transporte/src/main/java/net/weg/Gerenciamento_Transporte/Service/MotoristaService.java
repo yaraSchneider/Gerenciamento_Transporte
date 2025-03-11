@@ -14,7 +14,7 @@ public class MotoristaService {
     private MotoristaRepository motoristaRepository;
 
     public Motorista addMotorista(MotoristaPostRequestDTO motoristaPostRequestDTO){
-        if (motoristaRepository.existisByName(motoristaPostRequestDTO.nome())){
+        if (motoristaRepository.existsByNome(motoristaPostRequestDTO.nome())){
             throw new RuntimeException();
         }
         return motoristaRepository.save(motoristaPostRequestDTO.convertMotorista());
